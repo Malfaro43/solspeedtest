@@ -62,16 +62,26 @@ class Test:
         self.cursor = pygame.Rect(self.xdistance, 380, 18, 3)
         #self.reset()
 
+    # To make code easier to understand, write a short message explaning
+    # what each function is doing. 
+    # It's also good as a refresher when you need to revisit code after a few months
+    # and don't remember exactly why you wrote the code the way you did. 
     def nowordbreak(self):
         a = 50
         c = a
         b = True
         if len(self.psuedo) >= a:
+            # WHILE & IF statements evaluate to either 'true' or 'false'. 
+            # If the condition passes then the condition == 'true'.
+            # The next 'while True' after 'while <condition>' is not necessary 
+            # because the code is already going to the 'try' clause.
+            # You can remove the 'while True' statements that are placed before 
+            # the IF & WHILE statements that already have a condition
             while b:
-                while True:
+                while True: # <---Here
                     try:
                         if self.psuedo[a] != ' ':
-                            while True:
+                            while True: # <---Here
                                 if self.psuedo[c] == ' ':
                                     self.number[c+1] = True
                                     break
@@ -139,7 +149,7 @@ class Test:
             self.psuedo = ' '.join(self.psuedo)
         if self.quotes_active:
             if self.normal_active:
-                while True:
+                while True: # <---Here
                     self.psuedo = random.choice(normal_quotes.quote[:400])
                     if len(self.psuedo) <= 248:
                         break
