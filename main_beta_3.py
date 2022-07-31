@@ -78,23 +78,21 @@ class Test:
             # You can remove the 'while True' statements that are placed before 
             # the IF & WHILE statements that already have a condition
             while b:
-                while True: # <---Here
-                    try:
-                        if self.psuedo[a] != ' ':
-                            while True: # <---Here
-                                if self.psuedo[c] == ' ':
-                                    self.number[c+1] = True
-                                    break
-                                else:
-                                    c -= 1
-                            break
-                        else:
+                try:
+                    if self.psuedo[a] != ' ':
+                        if self.psuedo[c] == ' ':
                             self.number[c+1] = True
                             break
-
-                    except:
-                        b = False
+                        else:
+                            c -= 1
                         break
+                    else:
+                        self.number[c+1] = True
+                        break
+
+                except:
+                    b = False
+                    break
                 a += 50
                 c = a
 
